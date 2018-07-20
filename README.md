@@ -12,13 +12,19 @@ I want to know how slow it is. So I wrote this project.
 this program able use private/public key to do encrypt/decrypt for large file
 
 ## Dependency
-openssl library for core function
-use many c++11 syntax
-cmake for project maintain
-use bash script to clean, config, build, install project
+- openssl library for core function
+- use many c++11 syntax
+- cmake for project maintain
+- use bash script to clean, config, build, install project
 
 ## Environment
-only has try cross-compile with linaro 4.7 and run on a arm embedded linux
+- embedded
+  - cross-build with linaro 4.7
+  - execute on arm embedded linux (imx6)
+  - OpenSSL 1.0.0
+- desktop (a VirtualBox installed Debian 9.4)
+  - gcc 6.3.0
+  - OpenSSL 1.1.0
 
 ## Usage
 ```
