@@ -4,20 +4,12 @@
 #include <map>
 #include <string.h>
 
-#ifdef  __cplusplus
-extern  "C" {
-#endif
-
 #include <openssl/pem.h>
 #include <openssl/ssl.h>
 #include <openssl/rsa.h>
 #include <openssl/evp.h>
 #include <openssl/bio.h>
 #include <openssl/err.h>
-
-#ifdef  __cplusplus
-}
-#endif 
 
 #include "file.h"
 #include <trace/utils.h>
