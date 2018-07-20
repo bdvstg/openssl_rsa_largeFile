@@ -5,10 +5,7 @@
 #include <string>
 #include <vector>
 
-
 struct rsa_st;
-typedef struct rsa_st RSA;
-
 
 namespace OpenSsl_RsaUtl2 {
 
@@ -24,7 +21,7 @@ namespace OpenSsl_RsaUtl2 {
         std::string mKeyFilename;
         std::string mKeyPassword;
 
-        std::shared_ptr<RSA> mRsa;
+        rsa_st* mRsa;
         int mRsaModSize;
         std::vector<unsigned char> mRsaBuffer;
 

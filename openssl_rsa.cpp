@@ -67,7 +67,7 @@ void RSA_Utl::init(std::string key_filename, std::string key_password,
     auto key_Content = file_readAll(mKeyFilename);
 
     TRACE_DEBUG("Create BIO");
-    RSA *rsa= NULL;
+    rsa_st *rsa= nullptr;
 
     BIO *keybio = BIO_new_mem_buf(key_Content.data(), -1);
     if (keybio == NULL)
@@ -88,7 +88,7 @@ void RSA_Utl::init(std::string key_filename, std::string key_password,
 
     mRsaModSize = RSA_size(rsa);
     mRsaBuffer.resize(mRsaModSize);
-    mRsa.reset(rsa);
+    mRsa = rsa;
     TRACE_DEBUG("RSA_size = %d", mRsaModSize);
 }
 
@@ -109,14 +109,14 @@ std::map<which_t, low_level_handle_t> low_level_handles = {
 
 std::vector<char> RSA_Utl::handle(std::vector<char> data)
 {
-    assert(mRsa);
+    assert(mRsa != nullptr);
     assert(!mRsaBuffer.empty());
 
     int result = low_level_handles[{mKeyType, mCrypt}](
         data.size(),
         (unsigned char *)data.data(),
         mRsaBuffer.data(),
-        mRsa.get(), RSA_PKCS1_PADDING);
+        mRsa, RSA_PKCS1_PADDING);
 
     if(result == -1) {
         auto errnum = ERR_get_error();
