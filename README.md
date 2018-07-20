@@ -21,6 +21,7 @@ use bash script to clean, config, build, install project
 only has try cross-compile with linaro 4.7 and run on a arm embedded linux
 
 ## Usage
+```
 {-inkey} filename_of_key
     assign file name of key
 {-pubin}
@@ -45,7 +46,7 @@ only has try cross-compile with linaro 4.7 and run on a arm embedded linux
     setup debug level, level should be one of 0,1,2,3,4, 0 show nothing
     default debug level is 0 when without -verbose
     default debug level is 4 when -verbose but without level
-
+```
 ## Comment of Usage
 - -inkey, -pubin, -passphrase, -encrypt, -decrypt, -in, -out is same as
 "openssl rsautl"
