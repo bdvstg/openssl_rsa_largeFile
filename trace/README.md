@@ -4,18 +4,19 @@
 Karanyak Andrew, from Kazakhstan and working in Taiwan's ITRI
 
 ## Intro
-c++ library to print stderr with difference color
-library is maintain by cmake
-work on Windows and Linux
-Android also should be work
+- c++ library to print stderr with difference color
+- library is maintain by cmake
+- work on Windows and Linux
+- Android also should be work
 
 ## Usage
 
 #### Project Setting
-add_subdirectory(trace) in your CMakeLists.txt and target_link_libraries trace
-set cmake option TRACE_ENABLED to ON
+- add_subdirectory(trace) in your CMakeLists.txt and target_link_libraries trace
+- set cmake option TRACE_ENABLED to ON
 
 #### Code
+```
 #include<trace/utils.h>
 #define  TRACE_TAG  "tag_prefix_to_string"
 // switch what to show
@@ -29,7 +30,7 @@ TRACE_MESSAGE("Info String %d %s", 100, "eeeeee"); // like printf
 TRACE_ERROR("Error String");
 TRACE_WARNING("Warning String");
 TRACE_DEBUG("Debug String");
-
+```
 #### Known Issue
 ```
 if(true)
